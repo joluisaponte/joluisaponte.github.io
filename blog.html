@@ -1,0 +1,48 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+
+<div class="home">
+  <h1 class="page-heading">Blog</h1>
+
+  <div style="margin: 2rem 0;">
+    <p>Welcome to my blog where I share thoughts on faith, aviation, software testing, and music. Filter by category or explore them all!</p>
+  </div>
+
+  <!-- Category filters -->
+  <div style="margin: 2rem 0; padding: 1rem; background: #f5f5f5; border-radius: 8px;">
+    <strong>Categories:</strong>
+    <a href="#faith" style="margin: 0 0.5rem;">Faith</a> |
+    <a href="#aviation" style="margin: 0 0.5rem;">Aviation</a> |
+    <a href="#tech" style="margin: 0 0.5rem;">Tech/QA</a> |
+    <a href="#music" style="margin: 0 0.5rem;">Music</a>
+  </div>
+
+  {% if site.posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          {% if post.categories %}
+            <span class="post-categories">
+              {% for category in post.categories %}
+                <span class="category-badge" style="background: #667eea; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem; margin-left: 0.5rem;">{{ category }}</span>
+              {% endfor %}
+            </span>
+          {% endif %}
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h3>
+          {% if post.excerpt %}
+            <p>{{ post.excerpt }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No posts yet. Check back soon!</p>
+  {% endif %}
+
+</div>
