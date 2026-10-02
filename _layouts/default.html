@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Jose Luis Aponte — home"><span class="brand-mark" aria-hidden="true">ja.</span><span>JOSE LUIS APONTE<small>FAITH / FLIGHT / CODE / MUSIC</small></span></a>
+      <nav aria-label="Main navigation">
+        {% for path in site.header_pages %}{% assign nav_page = site.pages | where: 'path', path | first %}
+        {% if nav_page %}<a href="{{ nav_page.url | relative_url }}"{% if page.url == nav_page.url %} aria-current="page"{% endif %}>{{ nav_page.title | escape }}</a>{% endif %}
+        {% endfor %}
+      </nav>
+    </header>
+    <main id="main">{{ content }}</main>
+    <footer class="site-footer"><span>© {{ 'now' | date: '%Y' }} Jose Luis Aponte<br><small>Built with curiosity. Grounded in faith.</small></span><div><a href="https://github.com/{{ site.github_username }}">GitHub ↗</a><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">LinkedIn ↗</a><a href="{{ '/feed.xml' | relative_url }}">RSS ↗</a></div></footer>
+  </div>
+</body>
+</html>

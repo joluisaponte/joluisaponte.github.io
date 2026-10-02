@@ -21,9 +21,9 @@ I'd love to hear from you, whether you want to discuss:
 
 ---
 
-<div style="text-align: center; padding: 2rem; background: #f5f5f5; border-radius: 8px; margin-top: 2rem;">
-  <p style="font-style: italic; font-size: 1.1rem;">
+<blockquote>
+  <p>
     "Let your conversation be always full of grace, seasoned with salt, so that you may know how to answer everyone."
   </p>
   <p><strong>— Colossians 4:6</strong></p>
-</div>
+</blockquote>
