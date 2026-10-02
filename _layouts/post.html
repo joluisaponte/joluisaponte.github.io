@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<article class="document">
+  <header class="document-header">
+    <a class="eyebrow back-link" href="{{ '/blog/' | relative_url }}">← BACK TO THE JOURNAL</a>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time> / {{ page.categories | join: ' + ' | escape }}</p>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description %}<p class="dek">{{ page.description | escape }}</p>{% endif %}
+  </header>
+  <div class="prose">{{ content }}</div>
+  <div class="post-end"><span>Thanks for reading. — Jose</span><a href="{{ '/blog/' | relative_url }}">More from the journal ↗</a></div>
+</article>
